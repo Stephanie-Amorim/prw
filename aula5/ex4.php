@@ -1,7 +1,7 @@
 <?php
-   $num1 8;
-   $num2 5;
-   $num3 2;
+   $num1 = 8;
+   $num2 = 5;
+   $num3 = 2;
     
    if ($num1 > $num2 && $num1 > $num3 ){
        if ($num2> $num3 ){
