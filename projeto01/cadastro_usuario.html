@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
 
 	<title>Cadastro de Clientes</title>
 </head>
@@ -11,17 +12,18 @@
     <h2> Cadastro de Clientes - IFSP</h2>
 
     <form method = "POST" action = "cadastro_usuario.php">
-
+    <fieldset>
     Digite seu Nome: <input type= "nome_usuario" size="50" name="txtNome" id= "txtNome"> <br>
 
     Digite seu E-mail: <input type= "email_usuario" size="50" name="txtEmail" id= "txtEmail"> <br> 
     
     Digite seu Telefone: <input type= "telefone_usuario" size="30" name="txtTelefone" id= "txtTelefone"> <br>
-
-    <INPUT TYPE = "submit" NAME = "Enviar"
+    <div id="botao">
+    <INPUT TYPE = "submit"  NAME = "Enviar"
     
     VALUE = "Enviar"> 
-    
+    </div>
+    </fieldset>
 </form>  
 </body>
 </html>
