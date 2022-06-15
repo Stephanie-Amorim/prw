@@ -1,31 +1,24 @@
 <?php
   include('conexao.php');
-
-
-  $id= $_POST['id'];
-  $tipo = $_POST['tipo'];
-  $historico = $_POST['historico'];
-  $cheque = $_POST['cheque'];
+    $id= $_POST['id'];
+    $data = date($_POST['data']);
+    $tipo = $_POST['tipo'];
+    $valor= doubleval($_POST['valor']);
+    $historico= ucwords($_POST['historico']);
+    $cheque= $_POST['cheque'];
       
   echo "<h1> Alteração de dados </h1>";
-  echo "<p> Historico: " . $historico . "<p>";    
-  if(isset($fotoNome)){
-    $sql = "UPDATE fluxo_caixa SET
-              tipo='".$tipo."',
-              historico='".$historico."',
-              cheque='".$cheque."',
-              
-            WHERE id_caixa=".$id_caixa;
-  }
-  else
-  {
-    $sql = "UPDATE fluxo_caixa SET
-              tipo='".$tipo."',
-              historico='".$historico."',
-              cheque='".$cheque."'
-            WHERE id=".$id;
-  }
+  //echo "<p>  data alterada:" .$data. "<p>";
 	    
+   $sql = "UPDATE  fluxo_caixa  SET
+           tipo= '".$tipo."',
+           data= '".$data."',
+           valor= ".$valor.",
+           historico= '".$historico."',
+           cheque= '".$cheque."' 
+
+           WHERE id=".$id;
+
 	$result = mysqli_query($con, $sql);
 	if($result)
 		echo "Dados alterados com sucesso <br>";

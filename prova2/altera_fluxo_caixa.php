@@ -1,7 +1,7 @@
 <?php
    include('conexao.php');
-   $id_caixa = $_POST['id'];
-   $sql = 'SELECT * FROM fluxo_caixa where id='.$id_caixa;
+   $id = $_GET['id'];
+   $sql = 'SELECT * FROM fluxo_caixa where id='.$id;
    $result = mysqli_query($con, $sql);
    $row = mysqli_fetch_array($result);
 ?>
@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    <h1>Cadastro de Fluxo de Caixa  - IFSP</h1>
-    <div id="teste">
+    <h1>Cadastro de Fluxo de Caixa </h1>
+    
         <form method="post" action="altera_fluxo_caixa_exe.php" enctype='multipart/form-data'>
             <fieldset>
                 <legend>Cadastro</legend>
@@ -28,23 +28,26 @@
                 </div>
                 <div class="form-item">
                     <label for="tipo">Tipo:</label>
-                    <INPUT TYPE = "radio" NAME = "teste" 
+                    <INPUT TYPE = "radio" NAME = "tipo" 
                     VALUE = "Entrada"> Entrada 
            
-                    <INPUT TYPE = "radio" NAME = "teste" 
+                    <INPUT TYPE = "radio" NAME = "tipo" 
                     VALUE = "Saida"> Saida 
                 </div>
                 <div class="form-item">
                     <label for="valor">Valor:</label>
-                    <input type="text" id="valor" name="valor" placeholder="">
+                    <input type="valor" id="valor" name="valor" placeholder="">
                 </div>           
                 <div class="form-item">
                     <label for="historico">Historico:</label>
-                    <input type="text" id="historico" name="historico" placeholder="">
+                    <input type="historico" id="historico" name="historico" value="<?php echo $row['historico']?>" placeholder="">
                 </div>
-                <div class="form-item">
-                    <label for="cheque">Cheque:</label>
-                    <input type="text"  id="cheque" size="30" name="cheque" placeholder="">
+                <div id=" centro">
+                    <label for="tipo">Cheque:</label>
+                    <select id="cheque" name="cheque">
+                    <option value="sim">Sim</option>
+                    <option value="não">Não</option>
+                </select>
                 </div>            
                 <div class="form-item">
                     <input id="btn" type="submit" value="Enviar" >
@@ -54,6 +57,6 @@
                 </div>
             </fieldset>
         </form>
-    </div>
+  
 </body>
 </html>

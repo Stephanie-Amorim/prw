@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="estil.css">
 </head>
 <body>
-    <h1>Cadastro de Fluxo de Caixa</h1>
-    <div id="teste">
+    <h1> Altera de Fluxo de Caixa</h1>
+    
         <form method="post" action="cadastro_fluxo_caixa.php" enctype='multipart/form-data'>
             <fieldset>
                 <legend>Cadastro de Fluxo de Caixa</legend>
@@ -17,13 +17,12 @@
                     <label for="data">Data:</label>
                     <input type="date" id="data" name="data" placeholder="">      
                 </div>
-                <div class="form-item">
+                <div>
                     <label for="tipo">Tipo:</label>
-                    <INPUT TYPE = "radio" NAME = "teste" 
-                    VALUE = "Entrada"> Entrada 
-           
-                    <INPUT TYPE = "radio" NAME = "teste" 
-                    VALUE = "Saida"> Saida 
+                    <INPUT TYPE = "radio"  id="tipo" NAME = "tipo" VALUE = "Entrada"> 
+                        <label for="entrada">Entrada</label> 
+                    <INPUT TYPE = "radio"  id="tipo" NAME = "tipo" VALUE = "Saida"> 
+                        <label for="saida">Saída</label> 
                 </div>
                 <div class="form-item">
                     <label for="valor">Valor:</label>
@@ -33,9 +32,12 @@
                     <label for="historico">Historico:</label>
                     <input type="text" id="historico" name="historico" placeholder="">
                 </div>
-                <div class="form-item">
-                    <label for="cheque">Cheque:</label>
-                    <input type="text"  id="cheque" size="30" name="cheque" placeholder="">
+                <div id=" centro">
+                    <label for="tipo">Cheque:</label>
+                    <select id="cheque" name="cheque">
+                    <option value="sim">Sim</option>
+                    <option value="não">Não</option>
+                </select>
                 </div>
                 <div class="form-item">
                     <input id="btn" type="submit" value="Enviar" >
@@ -43,6 +45,6 @@
                 </div>
             </fieldset>
         </form>
-    </div>  
+  
 </body>
 </html>

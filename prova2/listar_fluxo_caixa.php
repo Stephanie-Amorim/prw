@@ -38,15 +38,22 @@
         <?php 
             while ($row = mysqli_fetch_array($result)) {
                 echo "<tr>";
-                echo "<td><a href='altera_fluxo_caixa.php?id=".$row['id']."'>" .$row['historico']. "</a></td>";
+                echo"<th>" .$row['id']. "</td>";
+                echo "<td><a href='altera_fluxo_caixa.php?id=".$row['id']."'>" .$row['data']. "</a></td>";
+                echo "<td>" .$row['tipo']. "</td>";
+                echo "<td>" .$row['valor']. "</td>";
                 echo "<td>" .$row['historico']. "</td>";
+                echo "<td>" .$row['cheque']. "</td>";
                 echo "<td><a href='excluir_fluxo_caixa.php?id=".$row['id']."'>Excluir</a></td>";
                 echo "</tr>";
             }
         ?>
-
-    </table>
-
+       
+    </table> <br>
+    
+    <div id='bonita'>
+    <a href='index.php'>Voltar</a>
+    </div>
 </body>
 </html>
 
